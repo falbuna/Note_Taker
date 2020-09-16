@@ -1,5 +1,4 @@
 var notesData = require("../db/db.json")
-var express = require("express");
 
 module.exports = function(app){
 
@@ -7,10 +6,13 @@ module.exports = function(app){
         res.json(notesData);
     });
 
-    app.use(express.static('public'));
-
     app.post("/api/notes", function(req, res) {
         notesData.push(req.body);
     });
     
+    app.post("/api/delete", function (req, res){
+        notesData.length = 0;
+        res.json({ ok: true });
+    });
+
 }

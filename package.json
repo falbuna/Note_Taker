@@ -1,14 +1,25 @@
 {
   "name": "note-taker",
   "version": "1.0.0",
-  "description": "",
+  "description": "Homework for Week 11",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
-  }
+    "express": "^4.16.4",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/falbuna/Note_Taker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/falbuna/Note_Taker/issues"
+  },
+  "homepage": "https://github.com/falbuna/Note_Taker#readme"
 }

@@ -149,18 +149,3 @@ $noteText.on("keyup", handleRenderSaveBtn);
 
 // Gets and renders the initial list of notes
 getAndRenderNotes();
-
-$(".save-note").on("click", function(event){
-  event.preventDefault();
-  console.log('Save has been clicked!')
-});
-
-$(".new-note").on("click", function(event){
-  event.preventDefault();
-  console.log('New has been clicked!')
-});
-
-$(".delete-note").on("click", function(event){
-  event.preventDefault();
-  console.log('Delete has been clicked!')
-});
