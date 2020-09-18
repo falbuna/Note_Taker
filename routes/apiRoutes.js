@@ -16,7 +16,12 @@ module.exports = function(app){
     });
     
     app.delete("/api/notes/:id", function (req, res){
-        notesData.length = 0;
+        let clickedID = req.params.id;
+
+        let index = notesData.findIndex((data) => data.id = clickedID);
+
+        notesData.splice(index, 1);
+
         res.json({ ok: true });
     });
 
