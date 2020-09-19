@@ -6,16 +6,16 @@ module.exports = function(app){
     // This will start the id at 0 which we will utilize to keep track of the id of the saved notes.
     let id = 0;
 
-    // This will read the the db.json file and return all saved notes as json.
+    // This will read the the db.json file and return all the saved notes.
     app.get("/api/notes", function(req, res) {
         res.json(notesData);
     });
 
     // When the user inputs data into the notes fields, they will be able to save and push the data to the db.json file.
     app.post("/api/notes", function(req, res) {
-        // The notes data will be pushed to the db.json file.
+        // The notes data will be pushed to the body of the request (req.body) in db.json.
         notesData.push(req.body);
-        // An id will be created and incremented and added to the notesData
+        // An id will be created and incremented and added to the req.body for noatesData.
         req.body.id = ++id;
         res.json(req.body);
     });
