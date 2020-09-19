@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+
 // The path for the db.json file.
 const notesData = require("../db/db.json");
 const scriptPath = __dirname;
