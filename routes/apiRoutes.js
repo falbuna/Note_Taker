@@ -1,5 +1,10 @@
+const fs = require("fs");
+const path = require("path");
 // The path for the db.json file.
-const notesData = require("../db/db.json")
+const notesData = require("../db/db.json");
+
+const scriptPath = __dirname;
+const filePath = path.join(scriptPath, '../db/db.json');
 
 module.exports = function(app){
 
@@ -18,6 +23,8 @@ module.exports = function(app){
         // An id will be created and incremented and added to the req.body for noatesData.
         req.body.id = ++id;
         res.json(req.body);
+        // This will write the notesData into the db.json file.
+        fs.writeFileSync(filePath, JSON.stringify(notesData));
     });
     
     // This will handle when the user deletes a saved note.
@@ -26,12 +33,13 @@ module.exports = function(app){
         let clickedID = req.params.id;
 
         // The index of the note with the data and the id
-        let index = notesData.findIndex((data) => data.id = clickedID);
+        let index = notesData.findIndex((data) => data.id == clickedID);
 
         // This will remove the note with the clicked index and id
         notesData.splice(index, 1);
 
-        res.json({ ok: true });
-    })
+        fs.writeFileSync(filePath, JSON.stringify(notesData));
 
+        res.json({ ok: true });
+    });
 }
