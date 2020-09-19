@@ -2,7 +2,6 @@ const fs = require("fs");
 const path = require("path");
 // The path for the db.json file.
 const notesData = require("../db/db.json");
-
 const scriptPath = __dirname;
 const filePath = path.join(scriptPath, '../db/db.json');
 
@@ -31,15 +30,12 @@ module.exports = function(app){
     app.delete("/api/notes/:id", function (req, res){
         // The note that is clicked with the request parameters id.
         let clickedID = req.params.id;
-
         // The index of the note with the data and the id
         let index = notesData.findIndex((data) => data.id == clickedID);
-
         // This will remove the note with the clicked index and id
         notesData.splice(index, 1);
-
+        // This will update the notesData in the db.json file.
         fs.writeFileSync(filePath, JSON.stringify(notesData));
-
         res.json({ ok: true });
     });
 }
