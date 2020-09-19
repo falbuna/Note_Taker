@@ -17,6 +17,21 @@ The application uses express to connect the backend and the frontend of the code
 
 ## Usage
 
+When the user first visits the deployed application, this is what they will see. To start taking notes, the user will need to click on "Get Started".
+
+![]()
+
+To add a note, the user will need to add a title for the note by clicking in the space "Note Title" and text for the note by clicking in the space in "Note Text". Once they add a title and text for a note, the user can press save (computer disc icon on the top right) to save the note.
+
+![]()
+
+All of the saved notes will be stored on the left side of the screen. To view previously saved notes, click on the note on the left side of the screen to display the note. To start a new note, press the pencil icon.
+
+![]()
+
+To delete a note, the user can press the trashcan icon to delete the note.
+
+![]()
 
 
 ## Questions
